@@ -1,3 +1,9 @@
+libgrapheme with the build system replaced by zig and packaged for the
+zig package manager. Currently only builds the library itself and does
+not run any tests or benchmarks, or generate any man pages.
+
+Below is the old readme:
+
 libgrapheme
 ===========
 
