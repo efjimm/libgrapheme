@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-#include "../gen/character.h"
+#include <gen/character.h>
 #include "../grapheme.h"
 #include "util.h"
 

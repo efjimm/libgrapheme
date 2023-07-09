@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-#include "../gen/sentence.h"
+#include <gen/sentence.h>
 #include "../grapheme.h"
 #include "util.h"
 

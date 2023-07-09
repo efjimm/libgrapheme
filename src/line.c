@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-#include "../gen/line.h"
+#include <gen/line.h>
 #include "../grapheme.h"
 #include "util.h"
 

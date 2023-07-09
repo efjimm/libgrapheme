@@ -2,7 +2,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#include "../gen/case.h"
+#include <gen/case.h>
 #include "../grapheme.h"
 #include "util.h"
 
