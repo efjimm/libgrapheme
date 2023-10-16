@@ -2,7 +2,7 @@
 	.name = "libgrapheme",
 	.version = "2.0.2",
 	.paths = .{
-		"gen/*.c",
+		"gen",
 		"data",
 		"benchmark",
 		"man",
