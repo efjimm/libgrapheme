@@ -25,7 +25,10 @@ pub fn build(b: *Build) void {
     lib.addIncludePath(.{ .path = thisDir() });
     genSources(lib, target, optimize);
 
-    lib.addCSourceFiles(source_files, cflags);
+    lib.addCSourceFiles(.{
+        .files = source_files,
+        .flags = cflags,
+    });
     lib.installHeader("grapheme.h", "grapheme.h");
     b.installArtifact(lib);
 
@@ -65,7 +68,10 @@ pub fn genSources(
         });
 
         exe.linkLibC();
-        exe.addCSourceFiles(&.{ src, "gen/util.c" }, cflags);
+        exe.addCSourceFiles(.{
+            .files = &.{ src, "gen/util.c" },
+            .flags = cflags,
+        });
 
         const run_step = b.addRunArtifact(exe);
         const file_source = run_step.captureStdOut();
