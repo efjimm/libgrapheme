@@ -18,8 +18,10 @@ pub fn build(b: *Build) void {
         .kind = .lib,
         .version = version,
         .linkage = if (shared) .dynamic else .static,
-        .target = target,
-        .optimize = optimize,
+        .root_module = .{
+            .target = target,
+            .optimize = optimize,
+        },
     });
 
     lib.addIncludePath(.{ .path = thisDir() });
@@ -58,8 +60,7 @@ pub fn genSources(
     const write_step = b.addWriteFiles();
 
     inline for (generators) |data| {
-        const src = data[0];
-        const dest = data[1];
+        const src, const dest = data;
 
         const exe = b.addExecutable(.{
             .name = std.fs.path.stem(src),
