@@ -24,7 +24,6 @@ pub fn build(b: *Build) void {
         },
     });
 
-    lib.addIncludePath(.{ .path = thisDir() });
     genSources(lib, target, optimize);
 
     lib.addCSourceFiles(.{
@@ -142,7 +141,3 @@ const man3_scripts = [_][]const u8{
 const man7_scripts = [_][]const u8{
     "man/libgrapheme.sh",
 };
-
-inline fn thisDir() []const u8 {
-    return comptime std.fs.path.dirname(@src().file) orelse ".";
-}
