@@ -30,7 +30,7 @@ pub fn build(b: *Build) void {
         .files = source_files,
         .flags = cflags,
     });
-    lib.installHeader("grapheme.h", "grapheme.h");
+    lib.installHeader(b.path("grapheme.h"), "grapheme.h");
     b.installArtifact(lib);
 
     const clean_step = b.step("clean", "Remove all generated files");
