@@ -38,11 +38,11 @@ pub fn build(b: *Build) void {
 }
 
 pub fn cleanStep(b: *Build, step: *Step) void {
-    const rm_out = b.addRemoveDirTree("zig-out");
-    const rm_cache = b.addRemoveDirTree("zig-cache");
+    const rm_out = b.addRemoveDirTree(b.path("zig-out"));
+    const rm_cache = b.addRemoveDirTree(b.path("zig-cache"));
 
     inline for (generators) |data| {
-        const rm_gen = b.addRemoveDirTree(data[1]);
+        const rm_gen = b.addRemoveDirTree(b.path(data[1]));
         step.dependOn(&rm_gen.step);
     }
 
