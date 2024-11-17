@@ -2,7 +2,7 @@ const std = @import("std");
 const Build = std.Build;
 const Step = Build.Step;
 
-const version = .{
+const version: std.SemanticVersion = .{
     .major = 2,
     .minor = 0,
     .patch = 2,
