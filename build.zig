@@ -18,10 +18,10 @@ pub fn build(b: *Build) void {
         .kind = .lib,
         .version = version,
         .linkage = if (shared) .dynamic else .static,
-        .root_module = .{
+        .root_module = b.createModule(.{
             .target = target,
             .optimize = optimize,
-        },
+        }),
     });
 
     genSources(lib, target, optimize);
