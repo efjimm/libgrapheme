@@ -1,6 +1,7 @@
 .{
-    .name = "libgrapheme",
+    .name = .libgrapheme,
     .version = "2.0.2",
+    .fingerprint = 0xa888310106d6b176,
     .paths = .{
         "gen",
         "data",
